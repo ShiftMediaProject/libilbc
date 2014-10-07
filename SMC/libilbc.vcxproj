@@ -225,7 +225,7 @@
     <None Include="libilbc.def" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{2016A4DB-B9BA-4521-BDA7-0EB3806E1FC8}</ProjectGuid>
+    <ProjectGuid>{1C2A61DC-CFE4-4671-B721-20B4E6BE9FC3}</ProjectGuid>
     <RootNamespace>libilbc</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
