@@ -1,0 +1,22 @@
+EXPORTS
+    WebRtcIlbcfix_EncoderAssign
+    WebRtcIlbcfix_DecoderAssign
+    WebRtcIlbcfix_EncoderCreate
+    WebRtcIlbcfix_DecoderCreate
+    WebRtcIlbcfix_EncoderFree
+    WebRtcIlbcfix_DecoderFree
+    WebRtcIlbcfix_EncoderInit
+    WebRtcIlbcfix_Encode
+    WebRtcIlbcfix_DecoderInit
+    WebRtcIlbcfix_DecoderInit20Ms
+    WebRtcIlbcfix_Decoderinit30Ms
+    WebRtcIlbcfix_Decode
+    WebRtcIlbcfix_Decode20Ms
+    WebRtcIlbcfix_Decode30Ms
+    WebRtcIlbcfix_DecodePlc
+    WebRtcIlbcfix_NetEqPlc
+    WebRtcIlbcfix_version
+    WebRtcIlbcfix_InitDecode
+    WebRtcIlbcfix_InitEncode
+    WebRtcIlbcfix_DecodeImpl
+    WebRtcIlbcfix_EncodeImpl
