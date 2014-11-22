@@ -11,10 +11,8 @@
 // This file contains platform-specific typedefs and defines.
 // Much of it is derived from Chromium's build/build_config.h.
 
-#ifndef _TYPEDEFS_H
-#define _TYPEDEFS_H
-
-#include "ilbc.h"
+#ifndef WEBRTC_TYPEDEFS_H_
+#define WEBRTC_TYPEDEFS_H_
 
 // Processor architecture detection.  For more info on what's defined, see:
 //   http://msdn.microsoft.com/en-us/library/b0084kay.aspx
@@ -112,13 +110,13 @@ typedef unsigned __int64    uint64_t;
 #endif  // WARN_UNUSED_RESULT
 
 // Put after a variable that might not be used, to prevent compiler warnings:
-//   int result UNUSED = DoSomething();
+//   int result ATTRIBUTE_UNUSED = DoSomething();
 //   assert(result == 17);
-#ifndef UNUSED
-#ifdef __GNUC__
-#define UNUSED __attribute__((unused))
+#ifndef ATTRIBUTE_UNUSED
+#if defined(__GNUC__) || defined(__clang__)
+#define ATTRIBUTE_UNUSED __attribute__((unused))
 #else
-#define UNUSED
+#define ATTRIBUTE_UNUSED
 #endif
 #endif
 
@@ -131,4 +129,4 @@ typedef unsigned __int64    uint64_t;
 #define NO_RETURN
 #endif
 
-#endif
+#endif  // WEBRTC_TYPEDEFS_H_
