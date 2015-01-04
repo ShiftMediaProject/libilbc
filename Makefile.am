@@ -206,9 +206,19 @@ libilbc_la_SOURCES = \
     $(sigproc_sources) \
     $(sigproc_headers)
 
+dist_doc_DATA = \
+    $(top_srcdir)/NEWS.md \
+    $(top_srcdir)/README.md
+
+DISTCLEANFILES = \
+    doltcompile \
+    doltlibtool
+
 EXTRA_DIST = \
-    $(top_srcdir)/*.txt \
+    $(top_srcdir)/CMakeLists.txt \
+    $(top_srcdir)/config.h.cmakein \
     $(top_srcdir)/ilbc/OWNERS \
+    $(top_srcdir)/ilbc/*.gypi \
     $(top_srcdir)/ilbc/*.m \
     $(top_srcdir)/ilbc/test/* \
     $(top_srcdir)/signal_processing/*_mips.c \
