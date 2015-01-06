@@ -1,3 +1,4 @@
+
 /* Define to 1 if you have the <dlfcn.h> header file. */
 /* #undef HAVE_DLFCN_H */
 
@@ -30,25 +31,6 @@
 
 /* Define to 1 if you have the <unistd.h> header file. */
 #define HAVE_UNISTD_H 1
-
-/* Define to the sub-directory in which libtool stores uninstalled libraries.
-   */
-#define LT_OBJDIR ".libs/"
-
-/* Name of package */
-#define PACKAGE "libilbc"
-
-/* Define to the address where bug reports for this package should be sent. */
-#define PACKAGE_BUGREPORT ""
-
-/* Define to the full name of this package. */
-#define PACKAGE_NAME "libilbc"
-
-/* Define to the one symbol short name of this package. */
-#define PACKAGE_TARNAME "libilbc"
-
-/* Define to the home page for this package. */
-#define PACKAGE_URL ""
 
 /* Define to necessary symbol if this constant uses a non-standard name on
    your system. */
