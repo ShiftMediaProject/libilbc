@@ -10,12 +10,14 @@
   </ImportGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugWinRT|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;..\;..\modules\audio_coding\codecs\ilbc;..\common_audio\signal_processing\include;..\abseil-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4068;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PreprocessorDefinitions>WEBRTC_WIN;ilbc_EXPORTS;ILBC_STATIC_DEFINE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)"\include
-copy ..\ilbc\interface\ilbc.h "$(OutDir)"\include\
+copy ..\ilbc.h "$(OutDir)"\include\
+copy .\ilbc_export.h "$(OutDir)"\include\
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libilbc.txt</Command>
     </PostBuildEvent>
@@ -42,12 +44,14 @@ del /f /q $(OutDir)\licenses\libilbc.txt
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugWinRT|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;..\;..\modules\audio_coding\codecs\ilbc;..\common_audio\signal_processing\include;..\abseil-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4068;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PreprocessorDefinitions>WEBRTC_WIN;ilbc_EXPORTS;ILBC_STATIC_DEFINE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)"\include
-copy ..\ilbc\interface\ilbc.h "$(OutDir)"\include\
+copy ..\ilbc.h "$(OutDir)"\include\
+copy .\ilbc_export.h "$(OutDir)"\include\
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libilbc.txt</Command>
     </PostBuildEvent>
@@ -74,15 +78,15 @@ del /f /q $(OutDir)\licenses\libilbc.txt
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLLWinRT|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;..\;..\modules\audio_coding\codecs\ilbc;..\common_audio\signal_processing\include;..\abseil-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4068;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PreprocessorDefinitions>WEBRTC_WIN;ilbc_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <Link>
-      <ModuleDefinitionFile>libilbc.def</ModuleDefinitionFile>
-    </Link>
+    <Link />
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)"\include
-copy ..\ilbc\interface\ilbc.h "$(OutDir)"\include\
+copy ..\ilbc.h "$(OutDir)"\include\
+copy .\ilbc_export.h "$(OutDir)"\include\
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libilbc.txt</Command>
     </PostBuildEvent>
@@ -109,15 +113,15 @@ del /f /q $(OutDir)\licenses\libilbc.txt
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLLWinRT|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;..\;..\modules\audio_coding\codecs\ilbc;..\common_audio\signal_processing\include;..\abseil-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4068;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PreprocessorDefinitions>WEBRTC_WIN;ilbc_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <Link>
-      <ModuleDefinitionFile>libilbc.def</ModuleDefinitionFile>
-    </Link>
+    <Link />
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)"\include
-copy ..\ilbc\interface\ilbc.h "$(OutDir)"\include\
+copy ..\ilbc.h "$(OutDir)"\include\
+copy .\ilbc_export.h "$(OutDir)"\include\
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libilbc.txt</Command>
     </PostBuildEvent>
@@ -144,12 +148,14 @@ del /f /q $(OutDir)\licenses\libilbc.txt
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWinRT|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;..\;..\modules\audio_coding\codecs\ilbc;..\common_audio\signal_processing\include;..\abseil-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4068;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PreprocessorDefinitions>WEBRTC_WIN;ilbc_EXPORTS;ILBC_STATIC_DEFINE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)"\include
-copy ..\ilbc\interface\ilbc.h "$(OutDir)"\include\
+copy ..\ilbc.h "$(OutDir)"\include\
+copy .\ilbc_export.h "$(OutDir)"\include\
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libilbc.txt</Command>
     </PostBuildEvent>
@@ -176,12 +182,14 @@ del /f /q $(OutDir)\licenses\libilbc.txt
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWinRT|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;..\;..\modules\audio_coding\codecs\ilbc;..\common_audio\signal_processing\include;..\abseil-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4068;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PreprocessorDefinitions>WEBRTC_WIN;ilbc_EXPORTS;ILBC_STATIC_DEFINE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)"\include
-copy ..\ilbc\interface\ilbc.h "$(OutDir)"\include\
+copy ..\ilbc.h "$(OutDir)"\include\
+copy .\ilbc_export.h "$(OutDir)"\include\
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libilbc.txt</Command>
     </PostBuildEvent>
@@ -208,15 +216,15 @@ del /f /q $(OutDir)\licenses\libilbc.txt
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLWinRT|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;..\;..\modules\audio_coding\codecs\ilbc;..\common_audio\signal_processing\include;..\abseil-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4068;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PreprocessorDefinitions>WEBRTC_WIN;ilbc_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <Link>
-      <ModuleDefinitionFile>libilbc.def</ModuleDefinitionFile>
-    </Link>
+    <Link />
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)"\include
-copy ..\ilbc\interface\ilbc.h "$(OutDir)"\include\
+copy ..\ilbc.h "$(OutDir)"\include\
+copy .\ilbc_export.h "$(OutDir)"\include\
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libilbc.txt</Command>
     </PostBuildEvent>
@@ -243,15 +251,15 @@ del /f /q $(OutDir)\licenses\libilbc.txt
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLWinRT|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;..\;..\modules\audio_coding\codecs\ilbc;..\common_audio\signal_processing\include;..\abseil-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4068;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PreprocessorDefinitions>WEBRTC_WIN;ilbc_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <Link>
-      <ModuleDefinitionFile>libilbc.def</ModuleDefinitionFile>
-    </Link>
+    <Link />
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)"\include
-copy ..\ilbc\interface\ilbc.h "$(OutDir)"\include\
+copy ..\ilbc.h "$(OutDir)"\include\
+copy .\ilbc_export.h "$(OutDir)"\include\
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libilbc.txt</Command>
     </PostBuildEvent>
