@@ -1,0 +1,16 @@
+diff --git a/rtc_base/numerics/safe_conversions.h b/rtc_base/numerics/safe_conversions.h
+index e00219cbd7..4a6c4d8f14 100644
+--- a/rtc_base/numerics/safe_conversions.h
++++ b/rtc_base/numerics/safe_conversions.h
+@@ -46,7 +46,11 @@ inline constexpr Dst dchecked_cast(Src value) {
+ // that the specified numeric conversion will saturate rather than overflow or
+ // underflow. NaN assignment to an integral will trigger a RTC_CHECK condition.
+ template <typename Dst, typename Src>
++#if !defined(_MSC_VER) || (_MSC_VER > 1900)
+ inline constexpr Dst saturated_cast(Src value) {
++#else
++inline Dst saturated_cast(Src value) {
++#endif
+   // Optimization for floating point values, which already saturate.
+   if (std::numeric_limits<Dst>::is_iec559)
+     return static_cast<Dst>(value);
