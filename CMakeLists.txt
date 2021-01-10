@@ -18,7 +18,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 project(libilbc
-        VERSION 3.0.2
+        VERSION 3.0.3
         DESCRIPTION "WebRTC's implementation of the Internet Low Bitrate Codec (iLBC)"
         HOMEPAGE_URL "https://github.com/TimothyGu/libilbc"
         LANGUAGES C CXX)
@@ -314,8 +314,13 @@ set_target_properties(ilbc PROPERTIES CLEAN_DIRECT_OUTPUT 1)
 add_executable(ilbc_test modules/audio_coding/codecs/ilbc/test/iLBC_test.c)
 target_link_libraries(ilbc_test ilbc)
 
+add_executable(ilbc_test2 iLBC_test2.c)
+target_link_libraries(ilbc_test2 ilbc)
+
 add_custom_target(ilbc_test-sample
                   ilbc_test 20 ${CMAKE_CURRENT_SOURCE_DIR}/sample.pcm encoded.ilbc decoded.pcm)
+add_custom_target(ilbc_test2-sample
+                  ilbc_test2 20 ${CMAKE_CURRENT_SOURCE_DIR}/sample.pcm encoded2.ilbc decoded2.pcm)
 
 ###################################################################################################
 ## Installation
