@@ -18,7 +18,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 project(libilbc
-        VERSION 3.0.1
+        VERSION 3.0.2
         DESCRIPTION "WebRTC's implementation of the Internet Low Bitrate Codec (iLBC)"
         HOMEPAGE_URL "https://github.com/TimothyGu/libilbc"
         LANGUAGES C CXX)
@@ -323,7 +323,7 @@ add_custom_target(ilbc_test-sample
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libilbc.pc
         DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
-install(FILES ilbc.h ilbc_export.h
+install(FILES ilbc.h ${CMAKE_CURRENT_BINARY_DIR}/ilbc_export.h
         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 install(FILES CONTRIBUTING.md NEWS.md README.md
         DESTINATION ${CMAKE_INSTALL_DOCDIR})
